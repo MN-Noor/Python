@@ -1,4 +1,3 @@
-# Minimum Window Substring
 class Solution(object):
     def minWindow(self, s, t):
         if t=="":  return  ""
@@ -14,19 +13,23 @@ class Solution(object):
 
         for j  in range(len(s)):
             c=s[j]
-            swindow[c]=1+swindow.get(c,0)
-            if c in tcount and swindow[c]==tcount[c]:
-                have+=1
+            if c in tcount: 
+                swindow[c]=1+swindow.get(c,0)
+                if  swindow[c]==tcount[c]:
+                    have+=1
 
             while have==need:
                 if j-i+1<resLength:
                     resLength=j-i+1
                     res=[i,j]
-                swindow[s[i]]-=1
-                if s[i] in tcount and swindow[s[i]]<tcount[s[i]]:
-                    have-=1
+                
+                if s[i] in tcount:
+                    swindow[s[i]]-=1
+                    if swindow[s[i]]<tcount[s[i]]:
+                        have-=1
                 i+=1
-        return  s[res]
+        l,r=res[0],res[1]
+        return  s[l:r+1] if resLength!=float("infinity") else  ""
 
 
        
