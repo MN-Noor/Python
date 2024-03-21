@@ -31,19 +31,21 @@ class LinkedList:
             curr_node.next=new_node
     def insertAtEnd(self,data):
         node=Node(data)
-        if self.isEmpty():
+        if self.IsEmpty():
             self.head=node
         else:
             cur_node=self.head
             while  cur_node.next!=None:
                 cur_node=cur_node.next()
             cur_node.next=node
+
     def countnodes(self):
         count=0
-        if  self.isEmpty():
+        if  self.IsEmpty():
             return 0
         else:
-            while(current.next!=None):
+            current=self.head
+            while  current!=None:
                 current=self.head
                 current=current.next
                 count+=1
@@ -54,7 +56,7 @@ class LinkedList:
             print("linked list is  empty")
         else:
             curr=self.head
-            while curr.next!=None:
+            while curr!=None:
                 print(curr.data)
                 curr=curr.next
 
@@ -93,18 +95,27 @@ class LinkedList:
     def deleteFirstNode(self):
         if self.IsEmpty():
             print("linkedList is Empty")
+            return False
         else:
             self.head=self.head.next
+            return True
+        
     def  FindMin(self):
         if self.IsEmpty():
             return -1
             
         curr=self.head
-        ma=curr
+        mi=curr
         while curr.next!=None:
             curr=curr.next
-            ma=max(ma,curr)
-        return ma
+            mi=min(mi,curr)
+        return mi
+    def deleteValue(self,value):
+        temp=self.head
+        while temp.next!=None and temp.data!=value:
+            prev=temp
+            temp=temp.next
+
         
     
 
