@@ -48,6 +48,18 @@ class LinkedList:
                 current=current.next
                 count+=1
             return count
+    def display(self):
+
+        if  self.IsEmpty():
+            print("linked list is  empty")
+        else:
+            curr=self.head
+            while curr.next!=None:
+                print(curr.data)
+                curr=curr.next
+
+
+
     def displayEven(self):
         if self.IsEmpty():
             print("Linked  list is Empty")
@@ -78,7 +90,21 @@ class LinkedList:
                     return True
                 current=current.next
             return False
-    def deleteNode():
+    def deleteFirstNode(self):
+        if self.IsEmpty():
+            print("linkedList is Empty")
+        else:
+            self.head=self.head.next
+    def  FindMin(self):
+        if self.IsEmpty():
+            return -1
+            
+        curr=self.head
+        ma=curr
+        while curr.next!=None:
+            curr=curr.next
+            ma=max(ma,curr)
+        return ma
         
     
 
