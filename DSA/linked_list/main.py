@@ -22,7 +22,7 @@ def Menu():
             data=input("Enter data")
             LinkedList.insertAtStart(data)
         elif choice==5:
-            LinkedList.countnodes()
+            print(LinkedList.countnodes())
         elif choice==6:
             LinkedList.displayEven()
         elif choice==7:

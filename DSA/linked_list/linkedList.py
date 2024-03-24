@@ -36,7 +36,7 @@ class LinkedList:
         else:
             cur_node=self.head
             while  cur_node.next!=None:
-                cur_node=cur_node.next()
+                cur_node=cur_node.next
             cur_node.next=node
 
     def countnodes(self):
@@ -46,19 +46,18 @@ class LinkedList:
         else:
             current=self.head
             while  current!=None:
-                current=self.head
                 current=current.next
                 count+=1
             return count
     def display(self):
-
         if  self.IsEmpty():
             print("linked list is  empty")
         else:
             curr=self.head
             while curr!=None:
-                print(curr.data)
+                print(f'{curr.data} ,', end="")
                 curr=curr.next
+
 
 
 
