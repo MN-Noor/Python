@@ -59,24 +59,23 @@ class LinkedList:
                 curr=curr.next
 
 
-
-
     def displayEven(self):
         if self.IsEmpty():
             print("Linked  list is Empty")
         else:
             current=self.head
-            while current.next!=None:
+            while current!=None:
                 if current.data %2==0:
                     print(current.data)
-                    current=current.next
+                current=current.next
+
     def sumOfValues(self):
-        if self.isEmpty():
+        if self.IsEmpty():
             return 0
         else:
             sum=0
             current=self.head
-            while current.next!=None:
+            while current!=None:
                 sum+=current.data
                 current=current.next
             return sum
@@ -86,7 +85,7 @@ class LinkedList:
             return False
         else:
             current=self.head
-            while current.next!=None:
+            while current!=None:
                 if current.data==value:
                     return True
                 current=current.next
@@ -102,16 +101,16 @@ class LinkedList:
     def  FindMin(self):
         if self.IsEmpty():
             return -1
-            
+         
         curr=self.head
-        mi=curr
-        while curr.next!=None:
+        mi=curr.data
+        while curr!=None:
             curr=curr.next
-            mi=min(mi,curr)
+            mi=min(mi,curr.data)
         return mi
     def deleteValue(self,value):
         temp=self.head
-        while temp.next!=None and temp.data!=value:
+        while temp!=None and temp.data!=value:
             prev=temp
             temp=temp.next
 

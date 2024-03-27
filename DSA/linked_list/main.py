@@ -19,7 +19,7 @@ def Menu():
         elif  choice==3:
             LinkedList.display()
         elif choice==4:
-            data=input("Enter data")
+            data=int(input("Enter data"))
             LinkedList.insertAtStart(data)
         elif choice==5:
             print(LinkedList.countnodes())
@@ -28,13 +28,15 @@ def Menu():
         elif choice==7:
             LinkedList.sumOfValues()
         elif choice==8:
-            if LinkedList.find():
+            data=int(input("Enter data"))
+            if LinkedList.find(data):
                 print("element found")
             else:
                 print("element  not found")
+
         elif  choice==9:
             min=LinkedList.FindMin()
-            print("Min:"+min)
+            print(f'Min:{min}')
         elif choice==10:
             status=LinkedList.deleteFirstNode()
             if status:
