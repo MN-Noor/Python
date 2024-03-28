@@ -115,8 +115,6 @@ class LinkedList:
             temp=temp.next
 
     def reverseLinkedlist(self):
-        if self.IsEmpty():
-            return -1
         prev,curr=None,self.head
         while curr!=None:
             next1=curr.next
