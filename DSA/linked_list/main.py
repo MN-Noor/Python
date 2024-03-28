@@ -5,7 +5,7 @@ def Menu():
     status=True
    
     while True:
-        print("1:IsEmpty\n2:Insert At End\n3:Display\n4:insertAt Start\n5:count nodes\n6:display even values\n7:Sum of values\n8:Find\n9:Find Minimum \n10:Delete First node\n11:Destructer\n12:Exit")
+        print("1:IsEmpty\n2:Insert At End\n3:Display\n4:insertAt Start\n5:count nodes\n6:display even values\n7:Sum of values\n8:Find\n9:Find Minimum \n10:Delete First node\11:Exit")
         choice=int(input("Enter Choice"))
         if choice==1:
             if LinkedList.IsEmpty():
@@ -42,9 +42,12 @@ def Menu():
             if status:
                 print("node Deleted")
 
-        # elif choice==11:
+        elif choice==11:
+            head=LinkedList.reverseLinkedlist()
+            print(f'head={head}')
         elif choice==12:
             status=False
+            break
     
 if __name__=="__main__":
     Menu()

@@ -104,7 +104,7 @@ class LinkedList:
          
         curr=self.head
         mi=curr.data
-        while curr!=None:
+        while curr.next!=None:
             curr=curr.next
             mi=min(mi,curr.data)
         return mi
@@ -114,7 +114,19 @@ class LinkedList:
             prev=temp
             temp=temp.next
 
-        
+    def reverseLinkedlist(self):
+        if self.IsEmpty():
+            return -1
+        prev,curr=None,self.head
+        while curr!=None:
+            next1=curr.next
+            curr.next=prev
+            prev=curr
+            curr=next1
+        self.head=prev
+        return self.head
+
+
     
 
 
