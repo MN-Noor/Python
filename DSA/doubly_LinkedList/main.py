@@ -24,7 +24,7 @@ def main():
             value = int(input("Enter value to insert at end: "))
             linked_list.insertAtEnd(value)
         elif choice == 5:
-            value = int(input("Enter value to insert before: "))
+            value = int(input("Enter index value to insert before: "))
             index = int(input("Enter new value to insert: "))
             found=linked_list.insertBefore(value, index)
             if found ==False:
@@ -32,7 +32,7 @@ def main():
             else:
                 print("value not found")
         elif choice == 6:
-            value = int(input("Enter value to insert after: "))
+            value = int(input("Enter index value to insert after: "))
             index = int(input("Enter new value to insert: "))
             found=linked_list.insertAfter(value, index)
             if found==False:

@@ -39,17 +39,23 @@ class LinkedList:
             self.tail.next=newNode
             newNode.prev=self.tail
             self.tail=newNode
+
     def insertBefore(self,value,index):
-        newNode=Node(value)
-        
-        if self.isEmpty():return False
-        if self.head.value==index:
+        print("hello")
+        if self.isEmpty():
+            print("helo")
+            return False
+        elif self.head.value==index:
+            print("hello")
             self.insertAtStart(value)
             return True
         else:
+            print("hello")
             temp=self.head.next
             while temp!=None:
                 if temp.value==index:
+                    print("hello")
+                    newNode=Node(value)
                     newNode.prev=temp.prev
                     newNode.next=temp
                     temp.prev.next=newNode
